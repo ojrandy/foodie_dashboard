@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { navigationConfig } from "@/lib/config/navigation";
 import { cn } from "@/lib/cn";
 import { useAppSelector } from "@/store/hooks";
+import { RootState } from "@/store/store";
 
 export function Sidebar() {
   const pathname = usePathname();
-  const sidebarOpen = useAppSelector((state) => state.ui.sidebarOpen);
+  const sidebarOpen = useAppSelector((state: RootState) => state.ui.sidebarOpen);
 
   // Group navigation items
   const groups = Array.from(new Set(navigationConfig.map((item) => item.group)));
