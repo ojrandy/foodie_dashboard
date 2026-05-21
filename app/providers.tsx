@@ -5,9 +5,10 @@ import { store } from "@/store/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "sonner";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes";
+import { ThemeVariantProvider } from "@/components/theme/ThemeVariantProvider";
 
 export function Providers({ children, ...props }: ThemeProviderProps) {
   const [queryClient] = useState(
@@ -33,8 +34,10 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
           disableTransitionOnChange
           {...props}
         >
-          {children}
-          <Toaster richColors position="top-right" />
+          <ThemeVariantProvider>
+            {children}
+            <Toaster richColors position="top-right" />
+          </ThemeVariantProvider>
         </NextThemesProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
