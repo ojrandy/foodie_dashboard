@@ -36,11 +36,11 @@ export function QuickActions() {
                 </span>
                 
                 {/* Icon Button */}
-                <Button
-                  size="icon"
-                  className={`${action.color} ${action.text} hover:opacity-90 rounded-full h-11 w-11 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center`}
-                >
-                  <action.icon className="h-4.5 w-4.5" />
+                  <Button
+                    size="icon"
+                    className={`${action.color} ${action.text} hover:opacity-90 rounded-full h-10 w-10 shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center`}
+                  >
+                    <action.icon className="h-4 w-4" />
                 </Button>
               </motion.div>
             ))}
@@ -56,7 +56,7 @@ export function QuickActions() {
         <Button
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
-          className="h-13 w-13 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-xl hover:shadow-2xl transition-all flex items-center justify-center"
+          className="h-12 w-12 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-xl hover:shadow-2xl transition-all flex items-center justify-center"
         >
           <motion.div
             animate={{ rotate: isOpen ? 135 : 0 }}

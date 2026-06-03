@@ -35,13 +35,26 @@ function useIsMobile() {
 }
 
 // Custom Tooltip component
-function ChartTooltip({ active, payload, label, prefix = "", suffix = "" }: any) {
+interface ChartTooltipPayloadItem {
+  color?: string;
+  fill?: string;
+  name: string;
+  value: number;
+}
+
+function ChartTooltip({ active, payload, label, prefix = "", suffix = "" }: {
+  active?: boolean;
+  payload?: ChartTooltipPayloadItem[];
+  label?: string;
+  prefix?: string;
+  suffix?: string;
+}) {
   if (active && payload && payload.length) {
     return (
-      <div className="rounded-lg border border-border bg-card p-3 shadow-md text-xs z-50">
+      <div className="rounded-xl border border-border/40 bg-card/90 backdrop-blur-md p-3 shadow-lg text-xs z-50">
         <p className="font-semibold text-muted-foreground mb-1.5">{label}</p>
         <div className="flex flex-col gap-1">
-          {payload.map((item: any, idx: number) => (
+          {payload.map((item: ChartTooltipPayloadItem, idx: number) => (
             <div key={idx} className="flex items-center gap-4 justify-between">
               <span className="flex items-center gap-1.5 text-muted-foreground">
                 <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color || item.fill }} />
@@ -138,8 +151,8 @@ export const RevenueTrendChart = React.memo(function RevenueTrendChart({ data = 
         </div>
       </div>
       
-      <div className="h-[230px] w-full mt-2">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-[230px] w-full mt-2 min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={data} margin={{ top: 10, right: 5, left: isMobile ? -30 : -20, bottom: 0 }}>
             <defs>
               <linearGradient id="revenueGlow" x1="0" y1="0" x2="0" y2="1">
@@ -206,8 +219,8 @@ export const OrderLifecycleChart = React.memo(function OrderLifecycleChart({ dat
         </div>
       </div>
 
-      <div className="h-[230px] w-full mt-2">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-[230px] w-full mt-2 min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <BarChart data={data} margin={{ top: 10, right: 5, left: isMobile ? -30 : -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.5} />
             <XAxis dataKey="name" stroke="#888888" fontSize={9} tickLine={false} axisLine={false} interval={isMobile ? 1 : 0} />
@@ -260,8 +273,8 @@ export const MealPopularityChart = React.memo(function MealPopularityChart({ dat
         "flex items-center justify-center min-h-[220px] gap-4",
         isMobile ? "flex-col py-1" : "flex-row h-[230px] md:gap-8"
       )}>
-        <div className={cn("shrink-0", isMobile ? "h-[120px] w-[120px]" : "h-[180px] w-[180px]")}>
-          <ResponsiveContainer width="100%" height="100%">
+        <div className={cn("shrink-0 min-w-0", isMobile ? "h-[120px] w-[120px]" : "h-[180px] w-[180px]")}>
+          <ResponsiveContainer width="100%" height="100%" minWidth={0}>
             <PieChart>
               <Pie
                 data={finalData}
@@ -329,8 +342,8 @@ export const DeliveryActivityChart = React.memo(function DeliveryActivityChart({
         </div>
       </div>
 
-      <div className="h-[230px] w-full mt-2">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-[230px] w-full mt-2 min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={data} margin={{ top: 10, right: 5, left: isMobile ? -30 : -20, bottom: 0 }}>
             <defs>
               <linearGradient id="deliveryHeatGlow" x1="0" y1="0" x2="0" y2="1">
@@ -378,8 +391,8 @@ export const UserEngagementChart = React.memo(function UserEngagementChart({ dat
         </div>
       </div>
 
-      <div className="h-[230px] w-full mt-2">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-[230px] w-full mt-2 min-w-0">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <LineChart data={data} margin={{ top: 10, right: 5, left: isMobile ? -30 : -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.5} />
             <XAxis dataKey="day" stroke="#888888" fontSize={9} tickLine={false} axisLine={false} interval={isMobile ? 1 : 0} />

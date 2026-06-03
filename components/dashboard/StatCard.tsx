@@ -78,7 +78,7 @@ export function StatCard({
     >
       {/* Top Header */}
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">{title}</span>
+        <span className="text-[10px] font-bold tracking-[0.08em] text-muted-foreground uppercase">{title}</span>
         <div className={cn("flex h-10 w-10 items-center justify-center rounded-full transition-transform hover:rotate-12", selectedAccent.iconBg)}>
           <Icon className={cn("h-5 w-5", selectedAccent.iconText)} />
         </div>
@@ -131,7 +131,7 @@ export function StatCard({
         <div className="mt-4 pt-4 border-t border-border/40 grid grid-cols-2 gap-4">
           {subMetrics.map((sm, idx) => (
             <div key={idx} className="flex flex-col">
-              <span className="text-[10px] text-muted-foreground uppercase tracking-wide">{sm.label}</span>
+              <span className="text-[9px] font-semibold tracking-[0.08em] text-muted-foreground uppercase">{sm.label}</span>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className="text-sm font-bold text-foreground">{sm.value}</span>
                 {sm.trend !== undefined && (

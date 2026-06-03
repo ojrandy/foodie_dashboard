@@ -8,7 +8,7 @@ const variantPreview: Record<ThemeVariant, string> = {
   indigo: "bg-gradient-to-br from-violet-600 to-indigo-500",
   orange: "bg-gradient-to-br from-orange-500 to-amber-400",
   emerald: "bg-gradient-to-br from-emerald-500 to-teal-400",
-  crimson: "bg-gradient-to-br from-rose-600 to-pink-500",
+  crimson: "bg-gradient-to-br from-blue-600 to-cyan-500",
 };
 
 export function ThemeVariantSwitcher() {

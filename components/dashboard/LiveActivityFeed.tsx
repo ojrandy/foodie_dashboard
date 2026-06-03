@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Truck, DollarSign, ChefHat, CheckCircle2, AlertCircle } from "lucide-react";
+import { ShoppingBag, Truck, DollarSign, ChefHat } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 interface ActivityEvent {

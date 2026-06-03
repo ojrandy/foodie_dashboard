@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function StatCardSkeleton() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-border/50 bg-card p-6 shadow-sm">

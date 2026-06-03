@@ -7,6 +7,12 @@ import {
   LineChart,
   Wallet,
   Settings,
+  Zap,
+  Sparkles,
+  Package,
+  LifeBuoy,
+  Bell,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +25,9 @@ export interface NavItem {
 }
 
 export const navigationConfig: NavItem[] = [
+  // ==========================================
+  // OVERVIEW GROUP
+  // ==========================================
   {
     label: "Dashboard",
     path: "/",
@@ -26,6 +35,10 @@ export const navigationConfig: NavItem[] = [
     roles: ["admin", "operations"],
     group: "Overview",
   },
+  
+  // ==========================================
+  // INTELLIGENCE GROUP
+  // ==========================================
   {
     label: "Recipes",
     path: "/recipes",
@@ -41,6 +54,24 @@ export const navigationConfig: NavItem[] = [
     group: "Intelligence",
   },
   {
+    label: "Automation",
+    path: "/automation",
+    icon: Zap,
+    roles: ["admin", "operations"],
+    group: "Intelligence",
+  },
+  {
+    label: "Budget AI",
+    path: "/budget-ai",
+    icon: Sparkles,
+    roles: ["admin", "operations", "finance"],
+    group: "Intelligence",
+  },
+  
+  // ==========================================
+  // OPERATIONS GROUP
+  // ==========================================
+  {
     label: "Orders",
     path: "/orders",
     icon: ShoppingCart,
@@ -55,6 +86,17 @@ export const navigationConfig: NavItem[] = [
     group: "Operations",
   },
   {
+    label: "Inventory",
+    path: "/inventory",
+    icon: Package,
+    roles: ["admin", "operations"],
+    group: "Operations",
+  },
+
+  // ==========================================
+  // BUSINESS GROUP
+  // ==========================================
+  {
     label: "Analytics",
     path: "/analytics",
     icon: LineChart,
@@ -67,6 +109,31 @@ export const navigationConfig: NavItem[] = [
     icon: Wallet,
     roles: ["admin", "finance"],
     group: "Business",
+  },
+
+  // ==========================================
+  // SYSTEM GROUP
+  // ==========================================
+  {
+    label: "Support",
+    path: "/support",
+    icon: LifeBuoy,
+    roles: ["admin", "support"],
+    group: "System",
+  },
+  {
+    label: "Notifications",
+    path: "/notifications",
+    icon: Bell,
+    roles: ["admin"],
+    group: "System",
+  },
+  {
+    label: "Security",
+    path: "/security",
+    icon: ShieldCheck,
+    roles: ["admin"],
+    group: "System",
   },
   {
     label: "Settings",

@@ -54,6 +54,34 @@ const AmbientBackground = dynamic(
 // DYNAMIC REGION DATA DICTIONARY
 // ============================================================================
 
+interface ActivityFeedItem {
+  id: string;
+  type: "order" | "market" | "dispatch" | "recipe";
+  title: string;
+  description: string;
+  time: string;
+  status: "success" | "warning" | "info";
+  detail?: string;
+}
+
+interface SimulatedActivityItem {
+  type: "order" | "market" | "dispatch" | "recipe";
+  title: string;
+  description: string;
+  status: "success" | "warning" | "info";
+  detail?: string;
+}
+
+interface InsightItem {
+  id: string;
+  type: "market" | "logistics" | "price" | "trend";
+  title: string;
+  description: string;
+  severity: "success" | "warning" | "primary";
+  metric?: string;
+  actionText?: string;
+}
+
 interface RegionalData {
   metadata: {
     activeUsers: string;
@@ -115,9 +143,9 @@ interface RegionalData {
     deliveryActivity: { hour: string; active: number }[];
     userEngagement: { day: string; new: number; returning: number }[];
   };
-  insights: any[];
-  activityFeed: any[];
-  simulatedActivityStream: any[];
+  insights: InsightItem[];
+  activityFeed: ActivityFeedItem[];
+  simulatedActivityStream: SimulatedActivityItem[];
 }
 
 const REGION_METADATA_MAP: Record<string, { activeUsers: string; activeZones: number; activityLevel: "High" | "Medium" | "Stable" }> = {
@@ -885,7 +913,7 @@ export default function DashboardPage() {
                           <button
                             key={item.id}
                             onClick={() => {
-                              setTimeFilter(item.id as any);
+                              setTimeFilter(item.id as "today" | "week" | "month");
                               if (item.id !== "today") {
                                 setSelectedDay(null);
                                 handleRegionChange(regionFilter); // Trigger a micro sync to update metrics
@@ -1104,7 +1132,7 @@ export default function DashboardPage() {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as "orders" | "revenue" | "customers" | "market")}
                 className={`px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors ${
                   activeTab === tab.id
                     ? "bg-card text-foreground shadow-sm"

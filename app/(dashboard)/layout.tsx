@@ -18,7 +18,7 @@ export default function DashboardLayout({
       </div>
 
       <Sidebar />
-      <div className="relative flex flex-col w-full flex-1 z-10">
+      <div className="relative flex flex-col flex-1 min-w-0 z-10 bg-background">
         <Navbar />
         <main className="flex-1 p-6 overflow-auto">
           {children}

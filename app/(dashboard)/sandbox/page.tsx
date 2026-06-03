@@ -13,14 +13,19 @@ import { PieChartCard } from "@/components/data-display/charts/PieChartCard";
 import { DataTable } from "@/components/data-display/data-table";
 import { Bell, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
 
-export default function SandboxPage() {
-  const chartData = [
+function generateChartData() {
+  return [
     { name: "Jan", total: Math.floor(Math.random() * 5000) + 1000 },
     { name: "Feb", total: Math.floor(Math.random() * 5000) + 1000 },
     { name: "Mar", total: Math.floor(Math.random() * 5000) + 1000 },
     { name: "Apr", total: Math.floor(Math.random() * 5000) + 1000 },
   ];
+}
+
+export default function SandboxPage() {
+  const [chartData] = useState(generateChartData);
 
   const columns = [
     {
@@ -30,7 +35,7 @@ export default function SandboxPage() {
     {
       accessorKey: "status",
       header: "Status",
-      cell: ({ row }: any) => {
+      cell: ({ row }: { row: { getValue: (key: string) => string } }) => {
         const status = row.getValue("status");
         return (
           <Badge variant={status === "Completed" ? "default" : "secondary"}>

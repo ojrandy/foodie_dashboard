@@ -4,6 +4,7 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random";
+import * as THREE from "three";
 import { useTheme } from "next-themes";
 import { useThemeVariant } from "@/components/theme/ThemeVariantProvider";
 
@@ -15,7 +16,7 @@ const variantColors: Record<string, { dark: string; light: string }> = {
 };
 
 function ParticleCloud({ color }: { color: string }) {
-  const ref = useRef<any>(null);
+  const ref = useRef<THREE.Points>(null);
 
   const sphere = useMemo(() => {
     const positions = new Float32Array(300 * 3);

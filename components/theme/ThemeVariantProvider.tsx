@@ -13,10 +13,10 @@ interface ThemeVariantContextValue {
 const STORAGE_KEY = "foodops-variant";
 
 const VARIANTS = [
-  { id: "indigo" as const, label: "Indigo Tech", description: "Futuristic intelligence" },
-  { id: "orange" as const, label: "Food Tech", description: "Energetic operational" },
-  { id: "emerald" as const, label: "Emerald Ops", description: "Stable logistics" },
-  { id: "crimson" as const, label: "Executive", description: "Premium high-end" },
+  { id: "indigo" as const, label: "Purple Vibe", description: "Primary premium tech" },
+  { id: "orange" as const, label: "Sunset Warm", description: "Energetic operational" },
+  { id: "emerald" as const, label: "Emerald Operational", description: "Logistics & food-tech" },
+  { id: "crimson" as const, label: "Ocean Blue", description: "Futuristic intelligence" },
 ];
 
 const ThemeVariantContext = createContext<ThemeVariantContextValue | null>(null);
