@@ -33,5 +33,202 @@
       "customers": "Customers",
       "market": "Market Intel"
     }
+  },
+  "recipes": {
+    "title": "Recipe Intelligence",
+    "subtitle": "AI-powered meal planning, automated nutrition maps, and Cameroon cost matrices.",
+    "add_smart_recipe": "Add Smart Recipe",
+    "active_catalog": "Active Catalog",
+    "count_recipes": "Recipes",
+    "average_cost_index": "Average Cost Index",
+    "average_prep_time": "Average Prep Time",
+    "mins": "Mins",
+    "search_placeholder": "Search recipes, ingredients...",
+    "all_categories": "All Categories",
+    "sort_by_name": "Sort by Name",
+    "sort_by_cost": "Sort by Cost",
+    "sort_by_duration": "Sort by Duration",
+    "no_recipes_found": "No Recipes Found",
+    "try_adjusting_search": "Try adjusting your search queries or filtering options to find delicious Cameroonian meals.",
+    "est_cost": "Est. Cost:",
+    "recipe_matrix": "Recipe Matrix",
+    "close_matrix": "Close Matrix",
+    "deploy_meal_plan": "Deploy Meal Plan",
+    "ai_calculation": "AI Intelligence calculation",
+    "automated_analysis": "Automated raw ingredient analysis.",
+    "calories": "Calories",
+    "dynamic_market_cost": "Dynamic Market Cost Index",
+    "estimated_buea_index": "Estimated Buea regional index today.",
+    "ingredients_map": "Ingredients Map",
+    "sub": "Sub:",
+    "chef_instructions": "Chef Instructions",
+    "ai_creation_engine": "AI Recipe Creation Engine",
+    "recipe_name": "Recipe Name *",
+    "name_placeholder": "e.g. Ndole Supreme Plan, Egusi Soup...",
+    "category": "Category",
+    "difficulty": "Difficulty",
+    "duration_mins": "Duration (Mins)",
+    "cost_estimate": "Cost Estimate (XAF)",
+    "description": "Description *",
+    "desc_placeholder": "Provide a detailed, elegant description of this culinary plan...",
+    "ingredients_comma": "Ingredients (Comma separated)",
+    "ing_placeholder": "e.g. ground egusi, washed spinach, dried fish, shrimp...",
+    "instructions_period": "Cooking Instructions (Period separated)",
+    "inst_placeholder": "e.g. Boil peanuts for 15 mins. Blend peanuts smooth. Simmer peanut with tender beef...",
+    "deploy_ai_calculation": "Deploy AI Nutrition Calculation",
+    "categories": {
+      "Traditional": "Traditional",
+      "Student": "Student",
+      "Budget": "Budget",
+      "Healthy": "Healthy",
+      "Family": "Family"
+    },
+    "difficulties": {
+      "Easy": "Easy",
+      "Medium": "Medium",
+      "Hard": "Hard"
+    },
+    "data": {
+      "rec-1": {
+        "name": "Egusi Soup supreme",
+        "desc": "Rich, aromatic West African melon seed soup packed with spinach, dried fish, and premium Cameroonian spices.",
+        "ingredients": [
+          "Egusi seeds (ground)",
+          "Spinach / Pumpkin leaves",
+          "Beef & Tripe (cooked)",
+          "Dried fish / Stockfish",
+          "Palm oil",
+          "Crayfish (ground)"
+        ],
+        "amounts": [
+          "2 cups",
+          "3 cups (chopped)",
+          "500g",
+          "2 pieces",
+          "1/2 cup",
+          "2 tbsp"
+        ],
+        "subs": ["Pumpkin seeds", "", "", "", "", ""],
+        "instructions": [
+          "Mix ground Egusi with a tiny bit of water to form thick paste clumps.",
+          "Heat palm oil in a pot and sauté sliced onions for 3 minutes.",
+          "Add the Egusi paste clumps and fry gently for 10 minutes until golden.",
+          "Pour in beef stock, dried fish, and cooked beef. Simmer for 15 minutes.",
+          "Fold in chopped spinach and ground crayfish. Cover and steam for 5 minutes.",
+          "Serve hot with yellow Garri or Fufu."
+        ]
+      },
+      "rec-2": {
+        "name": "Ndole Supreme Plan",
+        "desc": "The crown jewel of Cameroonian cuisine. Stewed bitterleaf nuts enriched with peanuts, shrimp, and premium beef.",
+        "ingredients": [
+          "Bitterleaf (washed clean)",
+          "Raw peanuts (boiled & paste)",
+          "Fresh shrimp / prawns",
+          "Beef pieces (boiled)",
+          "Onions (sliced)",
+          "Garlic & Ginger paste"
+        ],
+        "amounts": [
+          "3 cups",
+          "2 cups",
+          "200g",
+          "300g",
+          "2 medium",
+          "1 tbsp"
+        ],
+        "instructions": [
+          "Boil raw peanuts for 15 minutes, drain, and blend into a smooth cream.",
+          "Heat a large pot, add beef, blended garlic/ginger, and boil until tender.",
+          "Add peanut cream to the beef stock and simmer on low heat for 15 minutes, stirring constantly.",
+          "Stir in washed bitterleaf and cook for another 10 minutes.",
+          "In a separate pan, heat vegetable oil, sauté remaining onions, and fry shrimp until pink.",
+          "Pour hot oil, onions, and shrimp over the pot of Ndole. Mix gently and serve."
+        ]
+      },
+      "rec-3": {
+        "name": "Achu Special",
+        "desc": "Traditional delicacy from the Northwest region. Smooth pounded coco-yams served with rich, aromatic yellow limestone soup.",
+        "ingredients": [
+          "Coco-yams (taro)",
+          "Achu soup spices (traditional)",
+          "Limestone / Kanwa powder",
+          "Red Palm oil",
+          "Smoked cow skin (Canda)"
+        ],
+        "amounts": [
+          "6 large",
+          "3 tbsp",
+          "1 tsp",
+          "1 cup",
+          "200g"
+        ],
+        "instructions": [
+          "Boil unpeeled coco-yams until completely soft, peel, and pound in a mortar until smooth.",
+          "Heat palm oil slightly in a bowl, mix Kanwa with warm water, and strain into the oil, stirring to emulsify into a yellow soup.",
+          "Add Achu spices and stock to the yellow mixture and stir thoroughly.",
+          "Plate the pounded coco-yam paste with a central well filled with warm yellow soup, cow skin, and smoked fish."
+        ]
+      },
+      "rec-4": {
+        "name": "Student Budget Cup",
+        "desc": "Extremely affordable, rapid-fuel student rice combo prepared with sliced tomatoes, eggs, and dynamic localized spices.",
+        "ingredients": [
+          "Parboiled Rice",
+          "Fresh eggs",
+          "Tomatoes & Pepper",
+          "Vegetable oil"
+        ],
+        "amounts": [
+          "1.5 cups",
+          "2 units",
+          "2 chopped",
+          "2 tbsp"
+        ],
+        "subs": ["", "Fried tofu", "", ""],
+        "instructions": [
+          "Parboil rice for 10 minutes and drain.",
+          "Heat vegetable oil, fry onions and tomatoes for 3 minutes, then crack in eggs to scramble.",
+          "Stir in rice and cook for 5 minutes until fluffy."
+        ]
+      },
+      "rec-5": {
+        "name": "Molyko Student Cup",
+        "desc": "Highly energetic Molyko student staple consisting of stewed spaghetti, local seasoning, and egg strips.",
+        "ingredients": [
+          "Spaghetti noodles",
+          "Egg (scrambled)",
+          "Tomato paste"
+        ],
+        "amounts": [
+          "1 pack",
+          "1 unit",
+          "1 tbsp"
+        ],
+        "instructions": [
+          "Boil spaghetti for 8 minutes and drain.",
+          "Sauté tomato paste and onions in oil, mix in scrambled egg and spaghetti. Serve hot."
+        ]
+      },
+      "rec-6": {
+        "name": "Koki Wrap Plan",
+        "desc": "Budget-friendly steamed black-eyed pea pudding enriched with palm oil, wrapped beautifully in banana leaves.",
+        "ingredients": [
+          "Black-eyed beans",
+          "Palm oil",
+          "Cocoyam leaves (young)"
+        ],
+        "amounts": [
+          "2 cups",
+          "1/2 cup",
+          "5 leaves"
+        ],
+        "instructions": [
+          "Soak beans, peel skins, and blend into a thick, smooth paste.",
+          "Stir palm oil into paste until bright orange-yellow and fluffy.",
+          "Wrap paste in banana leaves with cocoyam leaves, steam for 40 minutes."
+        ]
+      }
+    }
   }
 }

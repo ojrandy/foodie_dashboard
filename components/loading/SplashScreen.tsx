@@ -38,10 +38,10 @@ export function SplashScreen() {
                 <PackageSearch className="h-8 w-8 text-primary-foreground" />
               </div>
               <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-accent to-glow-2 bg-clip-text text-transparent">
-                FoodOps AI
+                CHOPPAM
               </h1>
               <p className="text-sm font-medium text-muted-foreground">
-                Smart Food Intelligence Platform
+                Getting things Ready in the Kitchen...
               </p>
             </motion.div>
 

@@ -36,7 +36,7 @@ export function Navbar() {
           {mounted ? t("nav.title") : "FoodOps AI"}
         </div>
 
-        <div className="hidden md:flex relative w-96 max-w-full group">
+        <div className="hidden lg:flex relative w-96 max-w-full group">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground transition-colors group-focus-within:text-accent" />
           <Input
             type="search"

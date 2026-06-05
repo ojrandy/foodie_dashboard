@@ -1,5 +1,5 @@
-import { RecipeMain } from "./components/RecipeMain";
+import { RecipesWorkspace } from "@/features/recipes/RecipesWorkspace";
 
 export default function RecipesPage() {
-  return <RecipeMain />;
+  return <RecipesWorkspace />;
 }

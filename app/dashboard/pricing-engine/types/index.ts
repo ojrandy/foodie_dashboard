@@ -1,4 +1,4 @@
-export type CommodityCategory = "Vegetables" | "Tubers" | "Oils" | "Proteins" | "Spices";
+export type CommodityCategory = "Vegetables" | "Tubers" | "Oils" | "Proteins" | "Spices" | "Grains";
 export type TrendDirection = "up" | "down" | "stable";
 
 export interface CommodityPrice {
@@ -22,8 +22,6 @@ export interface PricingStats {
 }
 
 export interface HistoricalTrend {
-  month: string;
-  Tomatoes: number;
-  PalmOil: number;
-  Plantains: number;
+  label: string;
+  [commodityId: string]: string | number;
 }

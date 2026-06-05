@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeletons";
 
 export function TableLoader({ rows = 5 }: { rows?: number }) {
   return (

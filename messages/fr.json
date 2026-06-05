@@ -33,5 +33,202 @@
       "customers": "Clients",
       "market": "Info Marché"
     }
+  },
+  "recipes": {
+    "title": "Intelligence des Recettes",
+    "subtitle": "Planification de repas alimentée par l'IA, cartes de nutrition automatisées et matrices de coûts du Cameroun.",
+    "add_smart_recipe": "Ajouter une Recette Intelligente",
+    "active_catalog": "Catalogue Actif",
+    "count_recipes": "Recettes",
+    "average_cost_index": "Indice Coût Moyen",
+    "average_prep_time": "Temps de Préparation Moyen",
+    "mins": "Mins",
+    "search_placeholder": "Rechercher des recettes, ingrédients...",
+    "all_categories": "Toutes Catégories",
+    "sort_by_name": "Trier par Nom",
+    "sort_by_cost": "Trier par Coût",
+    "sort_by_duration": "Trier par Durée",
+    "no_recipes_found": "Aucune Recette Trouvée",
+    "try_adjusting_search": "Essayez d'ajuster vos requêtes de recherche ou vos options de filtrage pour trouver de délicieux repas camerounais.",
+    "est_cost": "Coût Est.:",
+    "recipe_matrix": "Matrice de Recette",
+    "close_matrix": "Fermer la Matrice",
+    "deploy_meal_plan": "Déployer le Plan de Repas",
+    "ai_calculation": "Calcul de l'Intelligence Artificielle",
+    "automated_analysis": "Analyse automatisée des ingrédients bruts.",
+    "calories": "Calories",
+    "dynamic_market_cost": "Indice Dynamique de Coût du Marché",
+    "estimated_buea_index": "Indice régional estimé de Buea aujourd'hui.",
+    "ingredients_map": "Carte des Ingrédients",
+    "sub": "Sub:",
+    "chef_instructions": "Instructions du Chef",
+    "ai_creation_engine": "Moteur de Création de Recettes IA",
+    "recipe_name": "Nom de la Recette *",
+    "name_placeholder": "ex: Ndole Supreme Plan, Soupe d'Egusi...",
+    "category": "Catégorie",
+    "difficulty": "Difficulté",
+    "duration_mins": "Durée (Mins)",
+    "cost_estimate": "Coût Estimé (XAF)",
+    "description": "Description *",
+    "desc_placeholder": "Fournissez une description détaillée et élégante de ce plan culinaire...",
+    "ingredients_comma": "Ingrédients (Séparés par des virgules)",
+    "ing_placeholder": "ex: egusi moulu, épinards lavés, poisson séché, crevettes...",
+    "instructions_period": "Instructions de Cuisson (Séparées par des points)",
+    "inst_placeholder": "ex: Faire bouillir les arachides 15 min. Mixer les arachides. Mijoter l'arachide avec le bœuf tendre...",
+    "deploy_ai_calculation": "Déployer le Calcul Nutritionnel IA",
+    "categories": {
+      "Traditional": "Traditionnel",
+      "Student": "Étudiant",
+      "Budget": "Économique",
+      "Healthy": "Sain",
+      "Family": "Famille"
+    },
+    "difficulties": {
+      "Easy": "Facile",
+      "Medium": "Moyen",
+      "Hard": "Difficile"
+    },
+    "data": {
+      "rec-1": {
+        "name": "Soupe d'Egusi suprême",
+        "desc": "Soupe riche et aromatique aux graines de melon d'Afrique de l'Ouest remplie d'épinards, de poisson séché et d'épices camerounaises de première qualité.",
+        "ingredients": [
+          "Graines d'Egusi (moulues)",
+          "Épinards / Feuilles de citrouille",
+          "Bœuf et Tripes (cuits)",
+          "Poisson séché / Stockfish",
+          "Huile de palme",
+          "Écrevisses (moulues)"
+        ],
+        "amounts": [
+          "2 tasses",
+          "3 tasses (hachées)",
+          "500g",
+          "2 morceaux",
+          "1/2 tasse",
+          "2 càs"
+        ],
+        "subs": ["Graines de citrouille", "", "", "", "", ""],
+        "instructions": [
+          "Mélangez l'Egusi moulu avec un peu d'eau pour former des grumeaux de pâte épaisse.",
+          "Chauffez l'huile de palme dans une marmite et faites revenir les oignons émincés pendant 3 minutes.",
+          "Ajoutez les grumeaux de pâte d'Egusi et faites frire doucement pendant 10 minutes jusqu'à ce qu'ils soient dorés.",
+          "Versez le bouillon de bœuf, le poisson séché et le bœuf cuit. Laissez mijoter 15 minutes.",
+          "Incorporez les épinards hachés et les écrevisses moulues. Couvrez et laissez cuire à la vapeur 5 minutes.",
+          "Servez chaud avec du Garri jaune ou du Fufu."
+        ]
+      },
+      "rec-2": {
+        "name": "Plan Ndolé Suprême",
+        "desc": "Le joyau de la cuisine camerounaise. Noix de feuilles amères mijotées enrichies d'arachides, de crevettes et de bœuf de première qualité.",
+        "ingredients": [
+          "Feuilles amères (lavées propres)",
+          "Arachides crues (bouillies et en pâte)",
+          "Crevettes fraîches / gambas",
+          "Morceaux de bœuf (bouillis)",
+          "Oignons (émincés)",
+          "Pâte d'ail et gingembre"
+        ],
+        "amounts": [
+          "3 tasses",
+          "2 tasses",
+          "200g",
+          "300g",
+          "2 moyens",
+          "1 càs"
+        ],
+        "instructions": [
+          "Faites bouillir les arachides crues pendant 15 minutes, égouttez-les et mixez-les pour obtenir une crème lisse.",
+          "Chauffez une grande marmite, ajoutez le bœuf, l'ail/gingembre mixé, et faites bouillir jusqu'à ce que la viande soit tendre.",
+          "Ajoutez la crème d'arachide au bouillon de bœuf et laissez mijoter à feu doux pendant 15 minutes en remuant constamment.",
+          "Incorporez les feuilles amères lavées et faites cuire encore 10 minutes.",
+          "Dans une poêle séparée, chauffez l'huile végétale, faites revenir le reste des oignons et faites frire les crevettes jusqu'à ce qu'elles soient roses.",
+          "Versez l'huile chaude, les oignons et les crevettes sur la marmite de Ndolé. Mélangez doucement et servez."
+        ]
+      },
+      "rec-3": {
+        "name": "Achu Spécial",
+        "desc": "Délice traditionnel de la région du Nord-Ouest. Taros pilés onctueux servis avec une soupe de calcaire jaune riche et aromatique.",
+        "ingredients": [
+          "Taros (macabos)",
+          "Épices pour soupe Achu (traditionnelles)",
+          "Calcaire / Poudre de Kanwa",
+          "Huile de palme rouge",
+          "Peau de vache fumée (Canda)"
+        ],
+        "amounts": [
+          "6 gros",
+          "3 càs",
+          "1 càc",
+          "1 tasse",
+          "200g"
+        ],
+        "instructions": [
+          "Faites bouillir les taros non épluchés jusqu'à ce qu'ils soient complètement tendres, épluchez-les et pilez-les dans un mortier jusqu'à obtenir une pâte lisse.",
+          "Chauffez légèrement l'huile de palme dans un bol, mélangez le Kanwa avec de l'eau tiède, et filtrez dans l'huile en remuant pour émulsionner en une soupe jaune.",
+          "Ajoutez les épices Achu et le bouillon au mélange jaune et remuez vigoureusement.",
+          "Dressez la pâte de taro pilée en formant un puits central rempli de soupe jaune chaude, de peau de vache et de poisson fumé."
+        ]
+      },
+      "rec-4": {
+        "name": "Coupe Budget Étudiant",
+        "desc": "Combiné de riz étudiant à carburant rapide, extrêmement abordable, préparé avec des tomates en tranches, des œufs et des épices locales dynamiques.",
+        "ingredients": [
+          "Riz étuvé",
+          "Œufs frais",
+          "Tomates et Piment",
+          "Huile végétale"
+        ],
+        "amounts": [
+          "1.5 tasses",
+          "2 unités",
+          "2 hachés",
+          "2 càs"
+        ],
+        "subs": ["", "Tofu frit", "", ""],
+        "instructions": [
+          "Étuvez le riz pendant 10 minutes et égouttez.",
+          "Chauffez l'huile végétale, faites frire les oignons et les tomates pendant 3 minutes, puis cassez les œufs pour les brouiller.",
+          "Incorporez le riz et faites cuire pendant 5 minutes jusqu'à ce qu'il soit moelleux."
+        ]
+      },
+      "rec-5": {
+        "name": "Coupe Étudiante de Molyko",
+        "desc": "Aliment de base très énergétique des étudiants de Molyko composé de spaghettis mijotés, d'assaisonnements locaux et de lamelles d'œuf.",
+        "ingredients": [
+          "Nouilles spaghetti",
+          "Œuf (brouillé)",
+          "Pâte de tomate"
+        ],
+        "amounts": [
+          "1 paquet",
+          "1 unité",
+          "1 càs"
+        ],
+        "instructions": [
+          "Faites bouillir les spaghettis pendant 8 minutes et égouttez.",
+          "Faites revenir la pâte de tomate et les oignons dans l'huile, incorporez l'œuf brouillé et les spaghettis. Servez chaud."
+        ]
+      },
+      "rec-6": {
+        "name": "Plan Koki Wrap",
+        "desc": "Pudding de haricots cornille économique cuit à la vapeur et enrichi d'huile de palme, joliment enveloppé dans des feuilles de bananier.",
+        "ingredients": [
+          "Haricots cornille",
+          "Huile de palme",
+          "Feuilles de macabo (jeunes)"
+        ],
+        "amounts": [
+          "2 tasses",
+          "1/2 tasse",
+          "5 feuilles"
+        ],
+        "instructions": [
+          "Faites tremper les haricots, pelez les peaux et mixez pour obtenir une pâte épaisse et lisse.",
+          "Incorporez l'huile de palme à la pâte jusqu'à ce qu'elle soit d'un jaune orangé vif et aérée.",
+          "Enveloppez la pâte dans des feuilles de bananier avec des feuilles de macabo, faites cuire à la vapeur pendant 40 minutes."
+        ]
+      }
+    }
   }
 }
