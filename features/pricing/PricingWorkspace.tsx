@@ -119,7 +119,6 @@ export function PricingWorkspace() {
   const [commodities, setCommodities] = useState<CommodityPrice[]>(INITIAL_COMMODITIES);
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
-  const [marketSort, setMarketSort] = useState<"buea" | "douala" | "yaounde">("buea");
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -133,6 +132,7 @@ export function PricingWorkspace() {
   const [newShortage, setNewShortage] = useState(30);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -516,7 +516,7 @@ export function PricingWorkspace() {
                     <label className="font-semibold text-muted-foreground uppercase tracking-wide">Category</label>
                     <select 
                       value={newCategory}
-                      onChange={(e: any) => setNewCategory(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewCategory(e.target.value as CommodityPrice["category"])}
                       className="bg-muted/30 border border-border/40 rounded-lg p-2.5 text-foreground focus:outline-none focus:ring-1 focus:ring-accent/30 cursor-pointer"
                     >
                       <option value="Vegetables">Vegetables</option>

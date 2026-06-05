@@ -134,7 +134,10 @@ export const RevenueTrendChart = React.memo(function RevenueTrendChart({ data = 
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
   
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return <div className="h-[280px] w-full animate-pulse rounded bg-muted/20" />;
 
   return (
@@ -202,7 +205,10 @@ export const OrderLifecycleChart = React.memo(function OrderLifecycleChart({ dat
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return <div className="h-[280px] w-full animate-pulse rounded bg-muted/20" />;
 
   return (
@@ -249,7 +255,10 @@ export const MealPopularityChart = React.memo(function MealPopularityChart({ dat
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return <div className="h-[280px] w-full animate-pulse rounded bg-muted/20" />;
 
   // In mobile views, only show top 3 meals to reduce visual density and fits standard small viewports
@@ -325,7 +334,10 @@ export const DeliveryActivityChart = React.memo(function DeliveryActivityChart({
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return <div className="h-[280px] w-full animate-pulse rounded bg-muted/20" />;
 
   return (
@@ -374,7 +386,10 @@ export const UserEngagementChart = React.memo(function UserEngagementChart({ dat
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
   if (!mounted) return <div className="h-[280px] w-full animate-pulse rounded bg-muted/20" />;
 
   return (

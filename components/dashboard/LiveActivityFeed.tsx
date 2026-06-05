@@ -108,6 +108,7 @@ export function LiveActivityFeed({
 
   // Sync state instantly when parent regional filter shifts
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEvents(customEvents);
   }, [customEvents]);
 

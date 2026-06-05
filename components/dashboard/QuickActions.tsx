@@ -21,7 +21,7 @@ export function QuickActions() {
       <AnimatePresence>
         {isOpen && (
           <div className="flex flex-col items-end gap-3 mb-2">
-            {actions.map((action, i) => (
+            {actions.map((action) => (
               <motion.div
                 key={action.label}
                 initial={{ opacity: 0, y: 15, scale: 0.9 }}

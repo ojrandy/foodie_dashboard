@@ -1,16 +1,25 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Menu, Search, Bell, Sun, Moon } from "lucide-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme/SimpleThemeProvider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch } from "@/store/hooks";
 import { toggleSidebar } from "@/store/slices/uiSlice";
 import { motion } from "framer-motion";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="h-14 border-b border-border/40 flex items-center px-4 glass-elevated justify-between sticky top-0 z-[200] transition-colors duration-300">
@@ -19,25 +28,28 @@ export function Navbar() {
           variant="ghost"
           size="icon"
           onClick={() => dispatch(toggleSidebar())}
-          className="md:hidden"
+          className="shrink-0"
         >
           <Menu className="h-5 w-5" />
         </Button>
-        <div className="font-bold text-sm md:hidden bg-gradient-to-r from-accent to-glow-2 bg-clip-text text-transparent">
-          FoodOps AI
+        <div className="font-bold text-sm bg-gradient-to-r from-accent to-glow-2 bg-clip-text text-transparent" suppressHydrationWarning>
+          {mounted ? t("nav.title") : "FoodOps AI"}
         </div>
 
         <div className="hidden md:flex relative w-96 max-w-full group">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground transition-colors group-focus-within:text-accent" />
           <Input
             type="search"
-            placeholder="Search orders, recipes, or riders... (Press '/')"
+            placeholder={mounted ? t("nav.search") : "Search anywhere..."}
             className="pl-9 bg-muted/50 w-full border-border/50 focus-visible:ring-[var(--ring)]/30 focus-visible:border-[var(--ring)]/50 transition-all shadow-sm"
+            suppressHydrationWarning
           />
         </div>
       </div>
 
       <div className="flex items-center gap-2">
+        <LanguageSwitcher />
+
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button variant="ghost" size="icon" className="text-muted-foreground relative">
             <Bell className="h-5 w-5" />

@@ -26,6 +26,7 @@ export function ThemeVariantProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const stored = localStorage.getItem(STORAGE_KEY) as ThemeVariant | null;
     if (stored && VARIANTS.some((v) => v.id === stored)) {

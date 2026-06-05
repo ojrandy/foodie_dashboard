@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "search": "Rechercher des commandes, recettes ou livreurs... (Appuyez sur '/')",
+    "title": "FoodOps IA"
+  },
+  "sidebar": {
+    "dashboard": "Tableau de Bord",
+    "orders": "Commandes",
+    "dispatch": "Répartition",
+    "recipes": "Recettes",
+    "inventory": "Inventaire",
+    "pricing-engine": "Moteur de Prix",
+    "finance": "Finances",
+    "analytics": "Analytique",
+    "budget-ai": "Budget IA",
+    "settings": "Paramètres",
+    "notifications": "Notifications",
+    "automation": "Automatisation"
+  },
+  "dashboard": {
+    "title": "Centre de Commandement",
+    "subtitle": "Logistique alimentaire en temps réel, orchestration des livraisons, indice d'intelligence du marché et analyse de la stabilité régionale des cuisines.",
+    "status": "Statut Opérationnel Stable",
+    "metrics": {
+      "active_deliveries": "Livraisons Actives",
+      "fulfillment_rate": "Taux de Réalisation",
+      "market_alerts": "Alertes de Marché",
+      "logistics_latency": "Latence Logistique"
+    },
+    "tabs": {
+      "orders": "Commandes",
+      "revenue": "Revenus",
+      "customers": "Clients",
+      "market": "Info Marché"
+    }
+  }
+}

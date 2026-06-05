@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { 
   ShoppingCart, Clock, CheckCircle, 
-  MapPin, AlertTriangle, ArrowRight, X, Sparkles, Search
+  MapPin, AlertTriangle, ArrowRight, X, Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";

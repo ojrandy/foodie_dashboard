@@ -65,7 +65,10 @@ export function DispatchWorkspace() {
   const [mounted, setMounted] = useState(false);
   const [selectedRider, setSelectedRider] = useState<Rider | null>(null);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => { 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true); 
+  }, []);
 
   const stats = useMemo(() => ({
     activeRiders: RIDERS.filter(r => r.status === "Active").length,

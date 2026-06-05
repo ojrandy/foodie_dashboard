@@ -29,8 +29,8 @@ export const navigationConfig: NavItem[] = [
   // OVERVIEW GROUP
   // ==========================================
   {
-    label: "Dashboard",
-    path: "/",
+    label: "Overview",
+    path: "/dashboard",
     icon: LayoutDashboard,
     roles: ["admin", "operations"],
     group: "Overview",
@@ -41,14 +41,14 @@ export const navigationConfig: NavItem[] = [
   // ==========================================
   {
     label: "Recipes",
-    path: "/recipes",
+    path: "/dashboard/recipes",
     icon: UtensilsCrossed,
     roles: ["admin", "operations"],
     group: "Intelligence",
   },
   {
     label: "Pricing Engine",
-    path: "/pricing",
+    path: "/dashboard/pricing-engine",
     icon: Tags,
     roles: ["admin", "operations", "finance"],
     group: "Intelligence",
@@ -73,14 +73,14 @@ export const navigationConfig: NavItem[] = [
   // ==========================================
   {
     label: "Orders",
-    path: "/orders",
+    path: "/dashboard/orders",
     icon: ShoppingCart,
     roles: ["admin", "operations", "support"],
     group: "Operations",
   },
   {
     label: "Dispatch",
-    path: "/dispatch",
+    path: "/dashboard/dispatch",
     icon: Truck,
     roles: ["admin", "operations", "logistics"],
     group: "Operations",
@@ -98,14 +98,14 @@ export const navigationConfig: NavItem[] = [
   // ==========================================
   {
     label: "Analytics",
-    path: "/analytics",
+    path: "/dashboard/analytics",
     icon: LineChart,
     roles: ["admin", "finance"],
     group: "Business",
   },
   {
     label: "Finance",
-    path: "/finance",
+    path: "/dashboard/finance",
     icon: Wallet,
     roles: ["admin", "finance"],
     group: "Business",
@@ -137,7 +137,7 @@ export const navigationConfig: NavItem[] = [
   },
   {
     label: "Settings",
-    path: "/settings",
+    path: "/dashboard/settings",
     icon: Settings,
     roles: ["admin"],
     group: "System",

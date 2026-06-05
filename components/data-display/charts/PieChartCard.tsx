@@ -16,7 +16,10 @@ const DEFAULT_COLORS = ["#18181b", "#71717a", "#e4e4e7", "#3f3f46"];
 
 export function PieChartCard({ title, data, dataKey, nameKey, colors = DEFAULT_COLORS }: PieChartCardProps) {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   return (
     <Card>

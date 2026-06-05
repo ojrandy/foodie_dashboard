@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell, BellRing, BellOff, Settings } from "lucide-react";
+import { Bell, BellRing, BellOff } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function NotificationsPage() {

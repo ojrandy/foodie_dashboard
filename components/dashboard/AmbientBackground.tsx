@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random";
 import * as THREE from "three";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme/SimpleThemeProvider";
 import { useThemeVariant } from "@/components/theme/ThemeVariantProvider";
 
 const variantColors: Record<string, { dark: string; light: string }> = {

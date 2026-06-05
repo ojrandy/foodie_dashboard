@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "search": "Search orders, recipes, or riders... (Press '/')",
+    "title": "FoodOps AI"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "dispatch": "Dispatch",
+    "recipes": "Recipes",
+    "inventory": "Inventory",
+    "pricing-engine": "Pricing Engine",
+    "finance": "Finance",
+    "analytics": "Analytics",
+    "budget-ai": "Budget AI",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "automation": "Automation"
+  },
+  "dashboard": {
+    "title": "Command Center",
+    "subtitle": "Realtime food logistics, dispatch orchestration, market intelligence index, and regional kitchen stability analytics.",
+    "status": "Operational Status Stable",
+    "metrics": {
+      "active_deliveries": "Active Deliveries",
+      "fulfillment_rate": "Fulfillment Rate",
+      "market_alerts": "Market Alerts",
+      "logistics_latency": "Logistics Latency"
+    },
+    "tabs": {
+      "orders": "Orders",
+      "revenue": "Revenue",
+      "customers": "Customers",
+      "market": "Market Intel"
+    }
+  }
+}

@@ -13,7 +13,10 @@ interface LineChartCardProps {
 
 export function LineChartCard({ title, data, xKey, yKey }: LineChartCardProps) {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   return (
     <Card>

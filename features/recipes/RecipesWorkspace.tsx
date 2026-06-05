@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 
 // ==========================================
@@ -192,7 +192,7 @@ export function RecipesWorkspace() {
   const [recipes, setRecipes] = useState<Recipe[]>(INITIAL_RECIPES);
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
-  const [difficultyFilter, setDifficultyFilter] = useState<string>("All");
+  const difficultyFilter = "All";
   const [sortBy, setSortBy] = useState<"name" | "cost" | "duration">("name");
   
   // Drawer States
@@ -205,10 +205,10 @@ export function RecipesWorkspace() {
   const [newDifficulty, setNewDifficulty] = useState<Recipe["difficulty"]>("Easy");
   const [newDuration, setNewDuration] = useState(30);
   const [newCost, setNewCost] = useState(1500);
-  const [newCalories, setNewCalories] = useState(400);
-  const [newProtein, setNewProtein] = useState(15);
-  const [newCarbs, setNewCarbs] = useState(40);
-  const [newFats, setNewFats] = useState(12);
+  const newCalories = 400;
+  const newProtein = 15;
+  const newCarbs = 40;
+  const newFats = 12;
   const [newDesc, setNewDesc] = useState("");
   const [newIngText, setNewIngText] = useState("");
   const [newInstText, setNewInstText] = useState("");
@@ -369,7 +369,7 @@ export function RecipesWorkspace() {
             <Filter className="h-3.5 w-3.5 text-muted-foreground" />
             <select 
               value={sortBy}
-              onChange={(e: any) => setSortBy(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as "name" | "cost" | "duration")}
               className="bg-transparent text-xs font-semibold text-foreground border-none focus:outline-none cursor-pointer outline-none"
             >
               <option value="name" className="bg-card">Sort by Name</option>
@@ -623,7 +623,7 @@ export function RecipesWorkspace() {
                     <label className="font-semibold text-muted-foreground uppercase tracking-wide">Category</label>
                     <select 
                       value={newCategory}
-                      onChange={(e: any) => setNewCategory(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewCategory(e.target.value as Recipe["category"])}
                       className="bg-muted/30 border border-border/40 rounded-lg p-2.5 text-foreground focus:outline-none focus:ring-1 focus:ring-accent/30 cursor-pointer"
                     >
                       <option value="Traditional">Traditional</option>
@@ -636,7 +636,7 @@ export function RecipesWorkspace() {
                     <label className="font-semibold text-muted-foreground uppercase tracking-wide">Difficulty</label>
                     <select 
                       value={newDifficulty}
-                      onChange={(e: any) => setNewDifficulty(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewDifficulty(e.target.value as Recipe["difficulty"])}
                       className="bg-muted/30 border border-border/40 rounded-lg p-2.5 text-foreground focus:outline-none focus:ring-1 focus:ring-accent/30 cursor-pointer"
                     >
                       <option value="Easy">Easy</option>
