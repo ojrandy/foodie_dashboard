@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { CommodityPrice, PricingStats, HistoricalTrend } from "../types";
+import type { CommodityPrice, HistoricalTrend } from "../types";
 
 const INITIAL_COMMODITIES: CommodityPrice[] = [
   { id: "com-1", name: "Tomato Basket (Large)", unit: "20kg Basket", bueaPrice: 8500, doualaPrice: 7000, yaoundePrice: 7500, shortageProbability: 65, trend: "up", category: "Vegetables", lastUpdated: "2 hours ago" },
@@ -37,7 +37,7 @@ const INITIAL_COMMODITIES: CommodityPrice[] = [
 ];
 
 export function generateHistoricalData(commodities: CommodityPrice[], timeframe: 'weeks' | 'months' | 'year'): HistoricalTrend[] {
-  let labels: string[] = [];
+  const labels: string[] = [];
   let steps = 0;
 
   if (timeframe === 'weeks') {

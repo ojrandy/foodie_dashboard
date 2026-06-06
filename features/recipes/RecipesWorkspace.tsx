@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { ChefHat, List, Sparkles, BarChart3, Image as ImageIcon, Calendar, Apple } from "lucide-react";
 import { RecipeDashboard } from "./components/RecipeDashboard";
@@ -13,7 +13,6 @@ import { RecipeAnalytics } from "./components/RecipeAnalytics";
 import { MediaLibrary } from "./components/MediaLibrary";
 
 export function RecipesWorkspace() {
-  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string>("dashboard");
 
   const TABS = [

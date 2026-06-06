@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, Cell } from "recharts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from "recharts";
 import { Map, MapPin, TrendingUp, TrendingDown } from "lucide-react";
 import { CommodityPrice } from "../hooks/usePricingEngine";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,31 @@ import { Badge } from "@/components/ui/badge";
 interface RegionalIntelligenceProps {
   commodities: CommodityPrice[];
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface TooltipProps { active?: boolean; payload?: any; label?: any; }
+const CustomBarTooltip = ({ active, payload, label }: TooltipProps) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-card border border-border/40 p-3 rounded-lg shadow-xl min-w-[150px]">
+        <p className="text-sm font-bold text-foreground mb-2">{label} Prices</p>
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        {payload.map((entry: any, index: number) => (
+          <div key={index} className="flex items-center justify-between text-xs py-1">
+            <span className="text-muted-foreground flex items-center gap-1">
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }} />
+              {entry.name}
+            </span>
+            <span className="font-extrabold" style={{ color: entry.color }}>
+              {entry.value.toLocaleString()}
+            </span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
 
 export function RegionalIntelligence({ commodities }: RegionalIntelligenceProps) {
   const regionalData = useMemo(() => {
@@ -26,28 +51,6 @@ export function RegionalIntelligence({ commodities }: RegionalIntelligenceProps)
     { name: "Sandaga Market", region: "Littoral", items: commodities.length, index: "Low", trend: "down" },
     { name: "Bamenda Main Market", region: "North West", items: 12, index: "High", trend: "up" },
   ];
-
-  const CustomBarTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-card border border-border/40 p-3 rounded-lg shadow-xl min-w-[150px]">
-          <p className="text-sm font-bold text-foreground mb-2">{label} Prices</p>
-          {payload.map((entry: any, index: number) => (
-            <div key={index} className="flex items-center justify-between text-xs py-1">
-              <span className="text-muted-foreground flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }} />
-                {entry.name}
-              </span>
-              <span className="font-extrabold" style={{ color: entry.color }}>
-                {entry.value.toLocaleString()}
-              </span>
-            </div>
-          ))}
-        </div>
-      );
-    }
-    return null;
-  };
 
   return (
     <div className="space-y-6">

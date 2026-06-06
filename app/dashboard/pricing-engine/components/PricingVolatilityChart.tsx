@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { BarChart2, Plus, X, Search, ChevronDown } from "lucide-react";
+import { BarChart2, Plus, X, Search } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -13,7 +11,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
 } from "recharts";
 import type { CommodityPrice } from "../types";
 import { generateHistoricalData } from "../hooks/usePricingEngine";
@@ -182,7 +179,7 @@ export function PricingVolatilityChart({ commodities, mounted }: PricingVolatili
             <div className="h-full w-full flex flex-col items-center justify-center border-2 border-dashed border-border/40 rounded-xl bg-muted/5">
               <BarChart2 className="h-10 w-10 text-muted-foreground/30 mb-2" />
               <p className="text-sm font-bold text-muted-foreground">No commodities selected.</p>
-              <p className="text-xs text-muted-foreground">Click "Compare Commodity" to add data.</p>
+              <p className="text-xs text-muted-foreground">Click &quot;Compare Commodity&quot; to add data.</p>
             </div>
           ) : (
             <ResponsiveContainer width="100%" height="100%">

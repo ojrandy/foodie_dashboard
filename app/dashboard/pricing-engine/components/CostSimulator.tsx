@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Plus, Trash2, ArrowRight, Percent, CheckCircle2, Save, FileText, Edit2, X } from "lucide-react";
+import { Calculator, Trash2, ArrowRight, Percent, CheckCircle2, Save, FileText, Edit2 } from "lucide-react";
 import { CommodityPrice } from "../types";
 
 interface CostSimulatorProps {
@@ -56,15 +56,15 @@ export function CostSimulator({ commodities }: CostSimulatorProps) {
   };
 
   const { totalCost, itemBreakdown } = useMemo(() => {
-    let total = 0;
     const breakdown = selectedItems.map(item => {
       const com = commodities.find(c => c.id === item.id);
       if (!com) return null;
       const unitPrice = com[targetMarket];
       const itemTotal = unitPrice * item.qty;
-      total += itemTotal;
       return { ...com, qty: item.qty, itemTotal, unitPrice };
     }).filter(Boolean) as (CommodityPrice & { qty: number; itemTotal: number; unitPrice: number })[];
+
+    const total = breakdown.reduce((acc, curr) => acc + curr.itemTotal, 0);
 
     return { totalCost: total, itemBreakdown: breakdown };
   }, [selectedItems, commodities, targetMarket]);
@@ -111,7 +111,7 @@ export function CostSimulator({ commodities }: CostSimulatorProps) {
     }, 500);
   };
 
-  const handleEditList = (list: any) => {
+  const handleEditList = (list: { id: string; name: string; cost: number; salePrice: number; items: number; market: string; itemsData: { id: string; qty: number; unit: string }[] }) => {
     setListName(list.name);
     setSelectedItems(list.itemsData);
     setSelectedMarketId(list.market);

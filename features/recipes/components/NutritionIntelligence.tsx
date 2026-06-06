@@ -7,13 +7,15 @@ import { ChartSkeleton, CardSkeleton } from "@/components/ui/skeletons";
 import { TrendingDown, TrendingUp, Flame, Dumbbell } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-const CustomBarTooltip = ({ active, payload, label }: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface TooltipProps { active?: boolean; payload?: any[]; label?: string; }
+const CustomBarTooltip = ({ active, payload, label }: TooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-card border border-border/40 p-3 rounded-lg shadow-xl min-w-[150px]">
         <p className="text-sm font-bold text-foreground mb-2 border-b border-border/40 pb-2">{label} Category</p>
         <div className="space-y-1.5">
-          {payload.map((entry: any, index: number) => (
+          {payload.map((entry, index: number) => (
             <div key={index} className="flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full shadow-sm" style={{ backgroundColor: entry.color }} />
@@ -29,7 +31,7 @@ const CustomBarTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-const CustomRadarTooltip = ({ active, payload }: any) => {
+const CustomRadarTooltip = ({ active, payload }: TooltipProps) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (

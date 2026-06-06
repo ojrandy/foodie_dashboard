@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { 
-  TrendingUp, TrendingDown, DollarSign, MapPin, 
+  TrendingUp, TrendingDown, MapPin, 
   Sparkles, ShieldAlert, X, Plus, BarChart2
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -360,7 +360,7 @@ export function PricingWorkspace() {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="font-semibold text-muted-foreground uppercase tracking-wide">Category</label>
-                    <select value={newCategory} onChange={(e: any) => setNewCategory(e.target.value)} className="bg-muted/30 border border-border/40 rounded-lg p-2.5">
+                    <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as CommodityPrice["category"])} className="bg-muted/30 border border-border/40 rounded-lg p-2.5">
                       <option value="Vegetables">Vegetables</option>
                       <option value="Tubers">Tubers</option>
                       <option value="Oils">Oils</option>

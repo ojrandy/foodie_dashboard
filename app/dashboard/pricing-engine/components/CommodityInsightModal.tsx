@@ -17,6 +17,7 @@ export function CommodityInsightModal({ commodity, onClose }: CommodityInsightMo
   // Reset feedback state when a new commodity is opened
   useEffect(() => {
     if (commodity) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFeedbackState("idle");
     }
   }, [commodity]);

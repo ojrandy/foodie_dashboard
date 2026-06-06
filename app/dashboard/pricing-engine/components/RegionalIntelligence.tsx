@@ -1,16 +1,25 @@
 import React, { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, Cell } from "recharts";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from "recharts";
 import { Map, MapPin, TrendingUp, TrendingDown, MousePointerClick, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CommodityPrice } from "../types";
 import { Badge } from "@/components/ui/badge";
 
-const CustomBarTooltip = ({ active, payload, label }: any) => {
+interface CustomTooltipProps {
+  active?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  payload?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  label?: any;
+}
+
+const CustomBarTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-card border border-border/40 p-3 rounded-lg shadow-xl min-w-[150px]">
         <p className="text-sm font-bold text-foreground mb-2">{label} Prices</p>
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {payload.map((entry: any, index: number) => (
           <div key={index} className="flex items-center justify-between text-xs py-1">
             <span className="text-muted-foreground flex items-center gap-1">
@@ -34,7 +43,7 @@ interface RegionalIntelligenceProps {
 
 export function RegionalIntelligence({ commodities }: RegionalIntelligenceProps) {
   const [isViewAllOpen, setIsViewAllOpen] = React.useState(false);
-  const [activeMarketForItems, setActiveMarketForItems] = React.useState<any | null>(null);
+  const [activeMarketForItems, setActiveMarketForItems] = React.useState<{name: string, region: string, items: number, trackedList: string[]} | null>(null);
 
   const regionalData = useMemo(() => {
     // We only take the first 6 items for a clean bar chart
@@ -85,7 +94,7 @@ export function RegionalIntelligence({ commodities }: RegionalIntelligenceProps)
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border)/0.5)" vertical={false} />
                   <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
-                  <Tooltip cursor={false} content={<CustomBarTooltip />} />
+                  <Tooltip cursor={false} content={CustomBarTooltip} />
                   <Legend wrapperStyle={{ paddingTop: "20px" }} />
                   <Bar dataKey="Buea" fill="#8b5cf6" radius={[4, 4, 0, 0]} maxBarSize={40} />
                   <Bar dataKey="Douala" fill="#0ea5e9" radius={[4, 4, 0, 0]} maxBarSize={40} />

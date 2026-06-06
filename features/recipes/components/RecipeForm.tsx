@@ -55,6 +55,7 @@ export function RecipeForm({ onSuccess, onCancel, initialData }: RecipeFormProps
 
   // System Cache Security Logging for Validation Errors
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/incompatible-library
     const subscription = form.watch(() => {
       const errors = form.formState.errors;
       if (Object.keys(errors).length > 0) {
@@ -72,6 +73,7 @@ export function RecipeForm({ onSuccess, onCancel, initialData }: RecipeFormProps
       }
     });
     return () => subscription.unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form.watch, form.formState.errors]);
 
   const onSubmit = (data: RecipeFormData) => {

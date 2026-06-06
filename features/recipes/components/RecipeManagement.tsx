@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+
 import { Search, Plus, Trash2, Clock, Flame, ChefHat, Filter, Sparkles, X, ChevronLeft, ChevronRight, PlayCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,6 @@ import { TableSkeleton } from "@/components/ui/skeletons";
 import { RecipeForm } from "./RecipeForm";
 
 export function RecipeManagement() {
-  const { t } = useTranslation();
   const { data: recipes, isLoading } = useRecipes();
   const { mutate: deleteRecipe } = useDeleteRecipe();
 
@@ -30,6 +29,7 @@ export function RecipeManagement() {
 
   // Reset page when filters change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentPage(1);
   }, [search, categoryFilter, sortBy, showTrending]);
 
@@ -50,7 +50,7 @@ export function RecipeManagement() {
         // Default 'newest' uses original array order which is already FIFO in useRecipes
         return 0;
       });
-  }, [recipes, search, categoryFilter, sortBy]);
+  }, [recipes, search, categoryFilter, sortBy, showTrending]);
 
   const paginatedRecipes = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;

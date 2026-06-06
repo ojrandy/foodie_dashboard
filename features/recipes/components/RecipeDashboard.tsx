@@ -6,7 +6,9 @@ import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianG
 import { CardSkeleton } from "@/components/ui/skeletons";
 import { Badge } from "@/components/ui/badge";
 
-const CustomAreaTooltip = ({ active, payload, label }: any) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface TooltipProps { active?: boolean; payload?: any[]; label?: string; }
+const CustomAreaTooltip = ({ active, payload, label }: TooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-card border border-border/40 p-3 rounded-lg shadow-xl min-w-[140px]">
@@ -167,7 +169,7 @@ export function RecipeDashboard() {
                 <div>
                   <h4 className="text-sm font-bold text-foreground">Menu Optimization</h4>
                   <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                    "Egusi Soup Supreme" is currently your highest-rated traditional dish. Consider adding a budget-friendly variant to capture the student demographic.
+                    &quot;Egusi Soup Supreme&quot; is currently your highest-rated traditional dish. Consider adding a budget-friendly variant to capture the student demographic.
                   </p>
                 </div>
               </div>
@@ -195,7 +197,7 @@ export function RecipeDashboard() {
                 <div>
                   <h4 className="text-sm font-bold text-foreground">Prep Time Inefficiency</h4>
                   <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                    "Achu Special" is averaging 75 mins prep time. Introducing pre-pounded coco-yam paste could reduce this by 40%.
+                    &quot;Achu Special&quot; is averaging 75 mins prep time. Introducing pre-pounded coco-yam paste could reduce this by 40%.
                   </p>
                 </div>
               </div>

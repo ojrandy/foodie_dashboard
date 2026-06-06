@@ -104,7 +104,7 @@ export function AddCommodityModal({ isOpen, onClose, onAdd }: AddCommodityModalP
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="font-semibold text-muted-foreground uppercase tracking-wide">Category</label>
-                  <select value={newCategory} onChange={(e: any) => setNewCategory(e.target.value)} className="bg-muted/30 border border-border/40 rounded-lg p-2.5 text-foreground">
+                  <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as CommodityPrice["category"])} className="bg-muted/30 border border-border/40 rounded-lg p-2.5 text-foreground">
                     <option value="Vegetables">Vegetables</option>
                     <option value="Tubers">Tubers</option>
                     <option value="Oils">Oils</option>
@@ -124,7 +124,7 @@ export function AddCommodityModal({ isOpen, onClose, onAdd }: AddCommodityModalP
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-semibold text-muted-foreground uppercase tracking-wide">Source Market</label>
-                    <select value={targetMarket} onChange={(e: any) => setTargetMarket(e.target.value)} className="bg-muted/50 border border-border/40 rounded-lg p-2.5 text-foreground font-bold">
+                    <select value={targetMarket} onChange={(e) => setTargetMarket(e.target.value as "Buea" | "Douala" | "Yaounde")} className="bg-muted/50 border border-border/40 rounded-lg p-2.5 text-foreground font-bold">
                       <option value="Buea">Buea Central Market</option>
                       <option value="Douala">Douala Sandaga Market</option>
                       <option value="Yaounde">Yaounde Mokolo Market</option>

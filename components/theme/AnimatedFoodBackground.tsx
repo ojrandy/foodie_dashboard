@@ -54,6 +54,7 @@ export function AnimatedFoodBackground() {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     setIsMobile(window.innerWidth < 768);
     

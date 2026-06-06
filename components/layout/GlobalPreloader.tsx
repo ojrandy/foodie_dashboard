@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Carrot, Beef, ChefHat, Leaf, type LucideIcon } from "lucide-react";
 
@@ -27,6 +26,7 @@ export function GlobalPreloader() {
   useEffect(() => {
     // Pick a random starting insight
     const randomStartIndex = Math.floor(Math.random() * INSIGHTS.length);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentIndex(randomStartIndex);
 
     // Guaranteed bulletproof unmount sequence independent of animation frameworks

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calculator, Plus, Trash2, ArrowRight, Percent, CheckCircle2 } from "lucide-react";
+import { Calculator, Trash2, ArrowRight, Percent, CheckCircle2 } from "lucide-react";
 import { CommodityPrice } from "../hooks/usePricingEngine";
 
 interface CostSimulatorProps {
@@ -29,15 +29,15 @@ export function CostSimulator({ commodities }: CostSimulatorProps) {
   };
 
   const { totalCost, itemBreakdown } = useMemo(() => {
-    let total = 0;
     const breakdown = selectedItems.map(item => {
       const com = commodities.find(c => c.id === item.id);
       if (!com) return null;
       const unitPrice = com[targetMarket];
       const itemTotal = unitPrice * item.qty;
-      total += itemTotal;
       return { ...com, qty: item.qty, itemTotal, unitPrice };
     }).filter(Boolean) as (CommodityPrice & { qty: number; itemTotal: number; unitPrice: number })[];
+
+    const total = breakdown.reduce((sum, item) => sum + item.itemTotal, 0);
 
     return { totalCost: total, itemBreakdown: breakdown };
   }, [selectedItems, commodities, targetMarket]);
@@ -57,7 +57,7 @@ export function CostSimulator({ commodities }: CostSimulatorProps) {
           </div>
           <select 
             value={targetMarket}
-            onChange={(e) => setTargetMarket(e.target.value as any)}
+            onChange={(e) => setTargetMarket(e.target.value as "bueaPrice" | "doualaPrice" | "yaoundePrice")}
             className="bg-background border border-border/40 rounded-lg p-2 text-sm focus:ring-1 focus:ring-primary/30"
           >
             <option value="bueaPrice">Buea Market Pricing</option>

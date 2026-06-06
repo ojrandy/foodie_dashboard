@@ -1,5 +1,5 @@
-import { OrderMain } from "./components/OrderMain";
+import { OrdersWorkspace } from "@/features/orders/OrdersWorkspace";
 
 export default function OrdersPage() {
-  return <OrderMain />;
+  return <OrdersWorkspace />;
 }
