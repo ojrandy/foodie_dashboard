@@ -1,5 +1,5 @@
-import { FinanceMain } from "./components/FinanceMain";
+import { FinanceOperationsWorkspace } from "@/features/finance/FinanceOperationsWorkspace";
 
 export default function FinancePage() {
-  return <FinanceMain />;
+  return <FinanceOperationsWorkspace />;
 }

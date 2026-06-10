@@ -1,5 +1,5 @@
-import { AnalyticsMain } from "./components/AnalyticsMain";
+import { CustomerIntelligenceWorkspace } from "@/features/analytics/CustomerIntelligenceWorkspace";
 
 export default function AnalyticsPage() {
-  return <AnalyticsMain />;
+  return <CustomerIntelligenceWorkspace />;
 }

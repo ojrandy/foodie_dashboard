@@ -1,5 +1,5 @@
-import { DispatchMain } from "./components/DispatchMain";
+import { DispatchWorkspace } from "@/features/dispatch/DispatchWorkspace";
 
 export default function DispatchPage() {
-  return <DispatchMain />;
+  return <DispatchWorkspace />;
 }
